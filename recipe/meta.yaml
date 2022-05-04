@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -52,6 +52,10 @@ test:
   imports:
     - kats
     - kats.detectors
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/facebookresearch/Kats
